@@ -11,7 +11,7 @@ bool check(string& expression, string& type) // Первоначальная п�
 {
     string iscircle = "circle"; // Проверка, что нам дан круг
     int i = 0;
-    for (; i < iscircle.size() && i < expression.size(); i++) 
+    for (i < iscircle.size() && i < expression.size(); i++) 
     {
         if (tolower(expression[i]) != iscircle[i]) 
         { // Приводим наши буквы к маленьким, чтобы сравнить их
@@ -32,7 +32,7 @@ bool check(string& expression, string& type) // Первоначальная п�
 
 
     bool digit = 0;
-    for (;expression[i] != ')' && i < expression.size(); i++) 
+    for (expression[i] != ')' && i < expression.size(); i++) 
     { // Проверяем цифры, запятые, точки (функция парсера не возьмет данные с запятой, нужны с точкой)
         if (!isdigit(expression[i]) && expression[i] != '.' && expression[i] != ',' && expression[i] != ' ') 
         {
@@ -101,9 +101,9 @@ bool calculate(const string& expression, const vector<double>& nums, string& typ
     if (type == "circle" && nums.size() == 3) 
     { // Проверяем количество данных и тип, дальше рассчеты
         system("cls");
-        cout « expression « endl;
-        cout « "perimeter = " « 2 * PI * nums[2] « endl;
-        cout « "area = " « PI * pow(nums[2], 2) « endl;
+        cout << expression << endl;
+        cout << "perimeter = " << 2 * PI * nums[2] << endl;
+        cout << "area = " << PI * pow(nums[2], 2) << endl;
     }
     return 1;
 }
@@ -116,7 +116,7 @@ int main()
     string type; // Тип фигуры
     if (!(check(expression, type) && parse(expression, v, type) && calculate(expression, v, type))) { // Если три функции возвращают 1, то завершаем программу, иначе идем в цикл
     do {
-        cout « "ERROR!" « endl;
+        cout << "ERROR!" << endl;
         getline(cin, expression);
     } while (!(check(expression, type) && parse(expression, v, type) && calculate(expression, v, type))); // Вводим выражение заново, пока не добьемся нужного результата
     }
