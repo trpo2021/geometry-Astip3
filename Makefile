@@ -6,12 +6,13 @@ bin/main: obj/src/main.o obj/lib/staticlib.a
 obj/src/main.o:src/geomviz/main.cpp
 	g++ -c -g src/geomviz/main.cpp -Wall -Werror  -o $@
 	
-	
-	
 obj/src/check.o: src/lib/check.cpp	
 	g++ -c -g src/lib/check.cpp -Wall -Werror  -o $@
 	
-obj/lib/staticlib.a: obj/src/check.o
+obj/src/parse.o: src/lib/parse.cpp	
+	g++ -c -g src/lib/parse.cpp -Wall -Werror  -o $@
+	
+obj/lib/staticlib.a: obj/src/check.o obj/src/parse.o
 	ar rcs $@ $^
 	
 run:

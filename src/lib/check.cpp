@@ -1,4 +1,5 @@
 #include "check.h"
+
 bool check(string& expression, string& type) // Первоначальная проверка
 {
     string iscircle = "circle"; // Проверка, что нам дан круг
@@ -47,7 +48,8 @@ bool check(string& expression, string& type) // Первоначальная п�
     if (!digit)
         return 0;
 
-    while ((expression[i] != ' ' || !isdigit(expression[i])) && i < sizeExpression) { 
+    while ((expression[i] != ' ' || !isdigit(expression[i]))
+           && i < sizeExpression) {
         // Проверяем скобки, но уже закрывающиеся
         if ((expression[i]) != ')') {
             return 0;
@@ -59,4 +61,3 @@ bool check(string& expression, string& type) // Первоначальная п�
         return 0; // Если скобок не хватает
     return 1;
 }
-
