@@ -37,4 +37,3 @@ bool parse(string& expression, vector<double>& nums, string& type)
 
     return 1;
 }
-

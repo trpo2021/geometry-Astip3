@@ -1,6 +1,6 @@
+#include "lib/calculate.h"
 #include "lib/check.h"
 #include "lib/parse.h"
-#include "lib/calculate.h"
 
 #include <cmath>
 #include <iostream>
@@ -8,7 +8,6 @@
 #include <vector> // Вектор (замена массиву, куда мы сложим спарсенные данные)
 
 using namespace std;
-
 
 int main()
 {
